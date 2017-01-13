@@ -20,4 +20,5 @@ script:
 before_script:
  - cp config/database.yml config/database.yml.travis
  - psql -c 'create database ycms_test;' -U postgres
+ - bundle update rake
  - rake db:test:prepare
