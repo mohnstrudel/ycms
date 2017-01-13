@@ -5,7 +5,7 @@ rvm:
 
 env:
  - DB=pgsql
- 
+
 services:
  - postgresql
 
@@ -16,3 +16,7 @@ test:
 # uncomment and edit the following line if your project needs to run something other than `rake`:
 script: 
  - bundle exec rspec spec
+
+ before_script:
+  - cp config/database.yml config/database.yml.travis
+  - psql -c 'create database ycms_test;' -U postgres
