@@ -1,17 +1,40 @@
-# README
+# Y.CMS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A raw CMS made for developers.
 
-Things you may want to cover:
+Ever wanted to have a "stupid and simpel" CMS written in Ruby, but always receiving "complex" things like mountable engines where you don't know where to start customizing? Well, then Y.CMS is for you.
 
-* Ruby version
+* Divided into admin and front part. Front is what your customers see. 
 
-* System dependencies
+* Admin part has a minimal styling using a bootstrap admin template
 
-* Configuration
+* Front has almost zero styling, everything is up to you
 
-* Database creation
+## Already included models
+
+Y.CMS comes preinstalled with a few basic models. This includes:
+
+* Pages and PageCategories
+
+* Posts and PostCategories
+
+* Users
+
+Please note, that for Posts and Pages there are different category tables. This is due to their nature, since usually you want to namespace different category types.
+
+## Human readable routes
+
+Routes.rb are already set up in such way, that you routes for pages and posts on the front part will be human- and SEO-friendly.
+Meaning, instead of
+	http://domain.com/pages/1
+or
+	http://domain.com/categories/1/pages/12
+you will get
+	http://domain.com/my-awesome-page-title
+and
+	http://domain.com/my-category-name/my-awesome-page-title-number-twelwe
+
+* 
 
 * Database initialization
 
