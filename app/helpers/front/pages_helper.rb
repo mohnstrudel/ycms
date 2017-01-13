@@ -1,0 +1,3 @@
+module Front::PagesHelper
+
+end

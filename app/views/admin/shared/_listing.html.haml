@@ -1,0 +1,31 @@
+%h2
+	="#{object_name(object).pluralize.capitalize} here"
+
+%table
+	%tr
+		%th
+			Title
+		%th
+			Body
+		%th
+			Slug
+		%th
+			Actions
+	
+	-object.each do |obj|
+		%tr
+			%td
+				=obj.title
+			%td
+				-if obj.respond_to?(:body)
+					=obj.body
+			%td
+				-if obj.respond_to?(:slug)
+					=url_for_page(obj)
+			%td
+				=link_to "Edit", send("edit_admin_#{object_name(object)}_path", obj)
+				=link_to "Delete", send("admin_#{object_name(object)}_path", obj), method: :delete, data: {confirm: 'Действительно удалить?'}
+
+
+
+=link_to "Create new #{object_name(object)}", send("new_admin_#{object_name(object)}_path")

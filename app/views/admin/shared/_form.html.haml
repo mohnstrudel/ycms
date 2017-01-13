@@ -1,0 +1,21 @@
+="#{controller.action_name.capitalize} #{object.class.name}"
+=form_for [:admin, object] do |f|
+	%p
+		=f.label :title
+		=f.text_field :title
+	-if object.respond_to?(:body)
+		%p
+			=f.label :body
+			=f.text_area :body
+	-if object.respond_to?(:slug)
+		%p
+			=f.label :slug
+			=f.text_field :slug
+	-if object.respond_to?(:page_category_id)
+		%p
+			=f.label :page_category_id
+			=f.select :page_category_id, PageCategory.all.map { |page_category| [ page_category.title, page_category.id ] }
+
+	%p
+		=f.submit "Save"
+=link_to "Back", send("admin_#{object_name(object).pluralize}_path")

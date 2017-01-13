@@ -1,0 +1,8 @@
+%h1 Category: #{object_name(@pages).humanize}
+
+-@pages.each do |page|
+	%article.clearfix
+		%h2=link_to page.title, page_category_page_path(page.page_category.slug, page.slug)
+		%p.text-muted=page.created_at.to_formatted_s :long
+		=page.body.html_safe 
+	%hr
