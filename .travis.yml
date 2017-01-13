@@ -17,6 +17,6 @@ test:
 script: 
  - bundle exec rspec spec
 
- before_script:
-  - cp config/database.yml config/database.yml.travis
-  - psql -c 'create database ycms_test;' -U postgres
+before_script:
+ - cp config/database.yml config/database.yml.travis
+ - psql -c 'create database ycms_test;' -U postgres
