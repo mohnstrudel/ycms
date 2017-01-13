@@ -6,7 +6,7 @@
 	-if object.respond_to?(:body)
 		%p
 			=f.label :body
-			=f.text_area :body
+			=f.cktext_area :body, ckeditor: { language: 'us', toolbar: 'mini'}
 	-if object.respond_to?(:slug)
 		%p
 			=f.label :slug

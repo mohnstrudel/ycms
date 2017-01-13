@@ -1,2 +1,7 @@
-%h1 Admin::Dashboard#index
-%p Find me in app/views/admin/dashboard/index.html.haml
+%h1 Admin::Dashboard
+
+%ol
+	%li
+		=link_to 'Page Categories', admin_page_categories_path
+	%li
+		=link_to 'Pages', admin_pages_path

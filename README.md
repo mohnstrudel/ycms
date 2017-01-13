@@ -26,15 +26,24 @@ Please note, that for Posts and Pages there are different category tables. This 
 
 Routes.rb are already set up in such way, that you routes for pages and posts on the front part will be human- and SEO-friendly.
 Meaning, instead of
+	
 	http://domain.com/pages/1
+
 or
+	
 	http://domain.com/categories/1/pages/12
+
 you will get
+	
 	http://domain.com/my-awesome-page-title
+
 and
+	
 	http://domain.com/my-category-name/my-awesome-page-title-number-twelwe
 
-* 
+## Other interesting features
+
+* Built in CKEditor support for body-colums
 
 * Database initialization
 

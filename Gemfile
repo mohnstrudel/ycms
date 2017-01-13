@@ -41,6 +41,11 @@ gem "haml-rails"
 # Use this gem for nice slugs in URLs
 gem 'friendly_id'
 
+# Use CKEditor for html formatting
+gem 'ckeditor' 
+gem 'carrierwave' # Required for images upload using ckeditor and in general
+gem 'mini_magick' # Required for image processing
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
