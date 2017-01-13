@@ -1,4 +1,4 @@
-# Y.CMS
+# Y.CMS [![Build Status](https://travis-ci.org/mohnstrudel/ycms.svg?branch=master)](https://travis-ci.org/mohnstrudel/ycms)
 
 A raw CMS made for developers.
 
