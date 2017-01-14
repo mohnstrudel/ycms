@@ -1,4 +1,4 @@
-# Y.CMS [![Build Status](https://travis-ci.org/mohnstrudel/ycms.svg?branch=master)](https://travis-ci.org/mohnstrudel/ycms)
+# Y.CMS [![Build Status](https://travis-ci.org/mohnstrudel/ycms.svg?branch=master)](https://travis-ci.org/mohnstrudel/ycms)  [![Code Climate](https://img.shields.io/codeclimate/github/mohnstrudel/ycms.svg)](https://codeclimate.com/github/mohnstrudel/ycms)
 
 A raw CMS made for developers.
 
