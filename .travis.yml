@@ -20,6 +20,6 @@ script:
 before_script:
  - cp config/database.yml.travis config/database.yml
  - psql -c 'create database ycms_test;' -U postgres
- - bundle install
+ - bundle install --no-deployment
  - bundle update
  - rake db:migrate RAILS_ENV=test
