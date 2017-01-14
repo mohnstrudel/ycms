@@ -22,4 +22,4 @@ before_script:
  - psql -c 'create database ycms_test;' -U postgres
  - bundle install --no-deployment
  - bundle update
- - rake db:test:prepare
+ - rake db:prepare RAILS_ENV=test
