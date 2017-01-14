@@ -22,10 +22,11 @@ test:
   database: ycms_test
 
 # uncomment and edit the following line if your project needs to run something other than `rake`:
-script: 
- - bundle exec rspec spec
+# script: 
+# - bundle exec rspec spec
 
 before_script:
  - cp config/database.yml.travis config/database.yml
  - psql -c 'create database ycms_test;' -U postgres
  - bundle update
+ - rake db:test:prepare
