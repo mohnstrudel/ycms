@@ -18,7 +18,8 @@ script:
  - bundle exec rspec spec
 
 before_script:
- - cp config/database.yml config/database.yml.travis
+ - cp config/database.yml.travis config/database.yml
  - psql -c 'create database ycms_test;' -U postgres
+ - bundle install
  - bundle update
  - rake db:migrate RAILS_ENV=test
