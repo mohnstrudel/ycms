@@ -1,4 +1,4 @@
 test:
-	adapter: postgresql
-	database: ycms_test
-	username: postgres
+  adapter: postgresql
+  database: ycms_test
+  username: postgres
