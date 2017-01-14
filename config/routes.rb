@@ -24,9 +24,9 @@ Rails.application.routes.draw do
     constraints subdomain: 'api' do
 
       resources :pages, only: [:index, :show]
-      Page.where.not(slug: nil).all.each do |page|
-        get "/#{page.slug}", controller: "pages", action: "show", id: page.id
-      end
+      # Page.where.not(slug: nil).all.each do |page|
+      #   get "/#{page.slug}", controller: "pages", action: "show", id: page.id
+      # end
     end
   end
 
