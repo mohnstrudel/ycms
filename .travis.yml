@@ -30,3 +30,9 @@ before_script:
  - psql -c 'create database ycms_test;' -U postgres
  - bundle update
  - bundle exec rake db:test:prepare
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: "6c9068eb-a63a-44dd-a6ca-fa6b5b16e821"
+  app: yadadya-development-ycms

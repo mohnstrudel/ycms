@@ -35,6 +35,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use Devise for handling users
+gem 'devise'
+
 # Use HAML for a nice html markup
 gem "haml-rails"
 

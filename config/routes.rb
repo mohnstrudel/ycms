@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
 
+  devise_for :users, controllers: {
+        sessions: 'front/users/sessions',
+        registrations: 'front/users/registrations'
+      }, path: '', path_names: { 
+        sign_in: 'login', 
+        sign_out: 'signout', 
+        sign_up: 'register', 
+        edit: 'profile' }
   mount Ckeditor::Engine => '/ckeditor'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -14,7 +22,7 @@ Rails.application.routes.draw do
   scope module: :front do
     root "static_pages#root"
     # resources :pages, only: [:index, :show]
-    resources :page_categories, only: [:index, :show], path: "" do
+    resources :page_categories, only: [:show], path: "" do
       resources :pages, path: "" 
     	# Page.where.not(slug: nil).all.each do |page|
     	# 	get "/#{page.slug}", controller: "pages", action: "show", id: page.id
