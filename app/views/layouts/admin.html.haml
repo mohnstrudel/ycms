@@ -6,6 +6,10 @@
   = csrf_meta_tags
 
 %body
-  =yield
+  #wrapper
+    =render 'admin/navigation/left_menu'
+    #page-wrapper.gray-bg
+      =yield
+      =render 'admin/navigation/footer'
 
 = javascript_include_tag 'admin', 'data-turbolinks-track' => true

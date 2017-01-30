@@ -1,7 +1,22 @@
-%h1 Admin::Dashboard
-
-%ol
-	%li
-		=link_to 'Page Categories', admin_page_categories_path
-	%li
-		=link_to 'Pages', admin_pages_path
+.row.border-bottom
+  %nav.navbar.navbar-static-top.white-bg{:role => "navigation", :style => "margin-bottom: 0"}
+    .navbar-header
+      %a.navbar-minimalize.minimalize-styl-2.btn.btn-primary{:href => "#"}
+        %i.fa.fa-bars
+      %form.navbar-form-custom{:action => "#", :method => "post", :role => "search"}
+        .form-group
+          %input#top-search.form-control{:name => "top-search", :placeholder => "Search for something...", :type => "text"}/
+    %ul.nav.navbar-top-links.navbar-right
+      %li
+        %a{:href => "#"}
+          %i.fa.fa-sign-out
+          Log out
+.wrapper.wrapper-content.animated.fadeInRight
+  .row
+    .col-lg-12
+      .text-center.m-t-lg
+        %h1
+          Добро пожаловать на главную страницу Y.CMS!
+        %small
+          CMS для ваших проектов, написанных на Ruby on Rails. Наслаждайтесь!
+    

@@ -41,6 +41,9 @@ gem 'devise'
 # Use HAML for a nice html markup
 gem "haml-rails"
 
+# Use font awesome
+gem "font-awesome-rails"
+
 # Use this gem for nice slugs in URLs
 gem 'friendly_id'
 
