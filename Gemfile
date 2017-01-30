@@ -54,6 +54,10 @@ group :development, :test do
   gem 'byebug', platform: :mri
 
   gem 'rspec-rails'
+  # To test render_template
+  gem 'rails-controller-testing'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :development do

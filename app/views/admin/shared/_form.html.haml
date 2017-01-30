@@ -15,6 +15,10 @@
 		%p
 			=f.label :page_category_id
 			=f.select :page_category_id, PageCategory.all.map { |page_category| [ page_category.title, page_category.id ] }
+	-if object.respond_to?(:post_category_id)
+		%p
+			=f.label :post_category_id
+			=f.select :post_category_id, PostCategory.all.map { |post_category| [ post_category.title, post_category.id ] }
 
 	%p
 		=f.submit "Save"

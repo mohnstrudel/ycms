@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   namespace :admin do
   	get '', to: 'dashboard#index', as: '/'
   	resources :pages, except: :show
+    resources :posts, except: :show
     resources :page_categories, except: :show
     resources :post_categories, except: :show
   end

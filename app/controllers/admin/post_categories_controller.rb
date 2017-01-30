@@ -3,7 +3,7 @@ class Admin::PostCategoriesController < AdminController
 	before_action :find_post_category, only: [:edit, :update, :destroy]
 
 	def index
-		@post_categorys = PostCategory.all
+		@post_categories = PostCategory.all
 	end
 
 	def new
@@ -33,7 +33,7 @@ class Admin::PostCategoriesController < AdminController
 
 	def destroy
 		if @post_category.destroy
-			redirect_to admin_post_categorys_path, method: :get
+			redirect_to admin_post_categories_path, method: :get
 			flash[:success] = "Удалено успешно"
 		else
 			render 'index'
