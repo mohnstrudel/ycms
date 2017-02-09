@@ -4,7 +4,15 @@
 //= require_tree ../../../vendor/assets/javascripts/admin/plugins/slimscroll/.
 
 // Flot
-//= require_tree ../../../vendor/assets/javascripts/admin/plugins/flot/.
+//= require admin/plugins/flot/jquery.flot
+//= require admin/plugins/flot/jquery.flot.pie
+//= require admin/plugins/flot/jquery.flot.resize
+//= require admin/plugins/flot/jquery.flot.spline
+//= require admin/plugins/flot/jquery.flot.symbol
+//= require admin/plugins/flot/jquery.flot.time
+//= require admin/plugins/flot/jquery.flot.tooltip.min
+//= require admin/plugins/flot/curvedLines
+//= require admin/plugins/flot/excanvas.min
 
 // Peity
 //= require_tree ../../../vendor/assets/javascripts/admin/plugins/peity/.
