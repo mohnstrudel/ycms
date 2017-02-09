@@ -1,4 +1,4 @@
-//= require jquery3
+//= require jquery2
 //= require admin/bootstrap.min
 //= require_tree ../../../vendor/assets/javascripts/admin/plugins/metisMenu/.
 //= require_tree ../../../vendor/assets/javascripts/admin/plugins/slimscroll/.
@@ -28,5 +28,5 @@
 //= require_tree ../../../vendor/assets/javascripts/admin/plugins/toastr/.
 
 // REMOVED turbolinks
-//= require ckeditor/init
+//= require bootsy
 // REMOVE require tree .

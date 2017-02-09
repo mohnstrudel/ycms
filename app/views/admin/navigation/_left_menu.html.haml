@@ -43,3 +43,12 @@
             =link_to 'Создать новую', new_admin_page_path
           %li
             =link_to 'Категории страниц', admin_page_categories_path
+
+      %li
+        =link_to admin_settings_path do
+          %i.fa.fa-th-large
+          %span.nav-label Настройки
+          %span.fa.arrow
+        %ul.nav.nav-second-level.collapse
+          %li.active
+            =link_to 'Общие', admin_settings_general_settings_path

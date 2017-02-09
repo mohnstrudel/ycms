@@ -9,11 +9,17 @@ Rails.application.routes.draw do
         sign_out: 'signout', 
         sign_up: 'register', 
         edit: 'profile' }
-  mount Ckeditor::Engine => '/ckeditor'
+  
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   namespace :admin do
   	get '', to: 'dashboard#index', as: '/'
+
+    namespace :settings do
+      get '', to: 'dashboard#index', as: '/'
+      resources :general_settings, except: :show
+    end
   	resources :pages, except: :show
     resources :posts, except: :show
     resources :page_categories, except: :show

@@ -41,14 +41,15 @@ gem 'devise'
 # Use HAML for a nice html markup
 gem "haml-rails"
 
-# Use font awesome
+# Use font awesome and Glyphicons
 gem "font-awesome-rails"
+gem 'bootstrap-glyphicons'
 
 # Use this gem for nice slugs in URLs
 gem 'friendly_id'
 
 # Use CKEditor for html formatting
-gem 'ckeditor' 
+gem 'bootsy' # Screw CKEditor, it's not working on production! 
 gem 'carrierwave' # Required for images upload using ckeditor and in general
 gem 'mini_magick' # Required for image processing
 

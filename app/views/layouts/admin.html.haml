@@ -9,7 +9,10 @@
   #wrapper
     =render 'admin/navigation/left_menu'
     #page-wrapper.gray-bg
-      =yield
+      =render 'admin/navigation/header'
+      =render 'admin/navigation/breadcrumbs'
+      .wrapper.wrapper-content.animated.fadeInRight
+        =yield
       =render 'admin/navigation/footer'
 
 = javascript_include_tag 'admin', 'data-turbolinks-track' => true
