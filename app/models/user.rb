@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validate :admin_not_allowed
+  validates :password, length: { minimum: 8 }
 
   private
 

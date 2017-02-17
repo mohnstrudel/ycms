@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     resources :posts, except: :show
     resources :page_categories, except: :show
     resources :post_categories, except: :show
+    resources :users, except: :show
   end
 
   scope module: :front do

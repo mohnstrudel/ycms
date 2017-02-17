@@ -36,3 +36,6 @@ deploy:
   api_key:
     secure: "6c9068eb-a63a-44dd-a6ca-fa6b5b16e821"
   app: yadadya-development-ycms
+
+notifications:
+  slack: yadadya:dw75tQmpnDHUXVCabdc2RABS

@@ -1,18 +1,18 @@
 !!!
 %html
-%head
-  %title Y.CMS
-  = stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track' => true
-  = csrf_meta_tags
+  %head
+    %title Y.CMS
+    = stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track' => true
+    = csrf_meta_tags
 
-%body
-  #wrapper
-    =render 'admin/navigation/left_menu'
-    #page-wrapper.gray-bg
-      =render 'admin/navigation/header'
-      =render 'admin/navigation/breadcrumbs'
-      .wrapper.wrapper-content.animated.fadeInRight
-        =yield
-      =render 'admin/navigation/footer'
+  %body
+    #wrapper
+      =render 'admin/navigation/left_menu'
+      #page-wrapper.gray-bg
+        =render 'admin/navigation/header'
+        =render 'admin/navigation/breadcrumbs'
+        .wrapper.wrapper-content.animated.fadeInRight
+          =yield
+        =render 'admin/navigation/footer'
 
-= javascript_include_tag 'admin', 'data-turbolinks-track' => true
+  = javascript_include_tag 'admin', 'data-turbolinks-track' => true

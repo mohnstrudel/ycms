@@ -17,11 +17,11 @@
           IN+
       %li.active
         =link_to admin_path do
-          %i.fa.fa-th-large
+          %i.fa.fa-area-chart
           %span.nav-label Дашборд
       %li
-        %a{:href => "index.html"}
-          %i.fa.fa-th-large
+        %a{:href => ""}
+          %i.fa.fa-newspaper-o
           %span.nav-label Новости
           %span.fa.arrow
         %ul.nav.nav-second-level.collapse
@@ -32,8 +32,8 @@
           %li
             =link_to 'Категории новостей', admin_post_categories_path
       %li
-        %a{:href => "index.html"}
-          %i.fa.fa-th-large
+        %a{:href => ""}
+          %i.fa.fa-file-text
           %span.nav-label Страницы
           %span.fa.arrow
         %ul.nav.nav-second-level.collapse
@@ -43,10 +43,20 @@
             =link_to 'Создать новую', new_admin_page_path
           %li
             =link_to 'Категории страниц', admin_page_categories_path
+      %li
+        %a{:href => ""}
+          %i.fa.fa-users
+          %span.nav-label Пользователи
+          %span.fa.arrow
+        %ul.nav.nav-second-level.collapse
+          %li.active
+            =link_to 'Все пользователи', admin_users_path
+          %li
+            =link_to 'Создать нового', new_admin_user_path
 
       %li
         =link_to admin_settings_path do
-          %i.fa.fa-th-large
+          %i.fa.fa-cog
           %span.nav-label Настройки
           %span.fa.arrow
         %ul.nav.nav-second-level.collapse

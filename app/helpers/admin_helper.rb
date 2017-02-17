@@ -15,4 +15,5 @@ module AdminHelper
 			return [:admin, object]
 		end
 	end
+
 end

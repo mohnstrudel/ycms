@@ -1,56 +1,68 @@
 .row
-	.col-lg-12
-		.ibox.float-e-margins
-			.ibox-title
-				%h5
-					="#{object_name(object).pluralize.capitalize} here"
-				.ibox-tools
-					%a.collapse-link
-						%i.fa.fa-chevron-up
-					%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-						%i.fa.fa-wrench
-					%ul.dropdown-menu.dropdown-user
-						%li
-							%a{:href => "#"} Config option 1
-						%li
-							%a{:href => "#"} Config option 2
-					%a.close-link
-						%i.fa.fa-times
-			.ibox-content
-				.row
-					.col-sm-12.m-b-xs
-						.pull-right
-							=link_to "Create new #{object_name(object)}", send("new_admin_#{local_assigns[:namespace]}#{object_name(object)}_path"), class: "btn btn-w-m btn-primary"
-				.table-responsive
-					%table.table.table-striped
-						%thead
-							%tr
-								%th
-								%th Title
-								%th Body
-								%th Slug
-								%th Action
-						%tbody
-							-object.each do |obj|
-								%tr
-									%td
-										%input.i-checks{:checked => "checked", :name => "input[]", :type => "checkbox"}/
-									%td
-										=obj.title
-									%td
-										-if obj.respond_to?(:body)
-											%small
-												=obj.body
-									%td
-										-if obj.respond_to?(:slug)
-											=url_for_page(obj)
-									%td
-										.btn-group
-											%button.btn.btn-primary.btn-xs.dropdown-toggle{"data-toggle" => "dropdown"}
-												Action
-												%span.caret
-											%ul.dropdown-menu
-												%li
-													=link_to "Edit", send("edit_admin_#{local_assigns[:namespace]}#{object_name(object)}_path", obj)
-												%li
-													=link_to "Delete", send("admin_#{local_assigns[:namespace]}#{object_name(object)}_path", obj), method: :delete, data: {confirm: 'Действительно удалить?'}
+  .col-lg-12
+    .ibox.float-e-margins
+      .ibox-title
+        %h5
+          ="#{object_name(object).pluralize.capitalize} here"
+        .ibox-tools
+          %a.collapse-link
+            %i.fa.fa-chevron-up
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %i.fa.fa-wrench
+          %ul.dropdown-menu.dropdown-user
+            %li
+              %a{:href => "#"} Config option 1
+            %li
+              %a{:href => "#"} Config option 2
+          %a.close-link
+            %i.fa.fa-times
+      .ibox-content
+        .row
+          .col-sm-12.m-b-xs
+            .pull-right
+              =link_to "Create new #{object_name(object)}", send("new_admin_#{local_assigns[:namespace]}#{object_name(object)}_path"), class: "btn btn-w-m btn-primary"
+        .table-responsive
+          %table.table.table-striped
+            %thead
+              %tr
+                %th
+                -if object.has_attribute? :title
+                  %th Title
+                -if object.has_attribute? :first_name
+                  %th First Name
+                -if object.has_attribute? :body
+                  %th Body
+                -if object.has_attribute? :slug
+                  %th Slug
+                -if object.has_attribute? :email
+                  %th Email
+                %th Created
+                %th Action
+            %tbody
+              -object.each do |obj|
+                %tr
+                  %td
+                    %input.i-checks{:checked => "checked", :name => "input[]", :type => "checkbox"}/
+                  -if obj.respond_to?(:title)
+                    %td
+                      =obj.title
+                  %td
+                    -if obj.respond_to?(:body)
+                      %small
+                        =obj.body
+                  %td
+                    -if obj.respond_to?(:slug)
+                      =url_for_page(obj)
+                  %td
+                    =time_ago_in_words(obj.created_at)
+                    ago
+                  %td
+                    .btn-group
+                      %button.btn.btn-primary.btn-xs.dropdown-toggle{"data-toggle" => "dropdown"}
+                        Action
+                        %span.caret
+                      %ul.dropdown-menu
+                        %li
+                          =link_to "Edit", send("edit_admin_#{local_assigns[:namespace]}#{object_name(object)}_path", obj)
+                        %li
+                          =link_to "Delete", send("admin_#{local_assigns[:namespace]}#{object_name(object)}_path", obj), method: :delete, data: {confirm: 'Действительно удалить?'}
