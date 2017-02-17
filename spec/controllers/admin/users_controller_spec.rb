@@ -24,7 +24,7 @@ RSpec.describe Admin::UsersController, type: :controller do
     describe "#edit" do
       it "renders edit template" do
         get :edit, id: created_user.id
-        expect(response).to render_template(:new)
+        expect(response).to render_template(:edit)
       end
     end
   end
