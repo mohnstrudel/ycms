@@ -24,6 +24,9 @@ class Admin::Settings::GeneralSettingsController < AdminController
   end
 
   def update
+    # debug
+    # @general_setting.update(language: create_hash(params[:general_setting][:language]))
+    @general_setting.language = create_hash(params[:general_setting][:language])
     update_helper(@general_setting, "edit_admin_settings_general_setting_path", general_setting_params)
   end
 
@@ -35,6 +38,15 @@ class Admin::Settings::GeneralSettingsController < AdminController
   end
 
   def general_setting_params
-    params.require(:general_setting).permit(:url, :description, :logo)
+    params.require(:general_setting).permit(:url, :description)
+  end
+
+  def create_hash(params)
+    language_hash = Hash.new
+
+    params.each do |param|
+      language_hash[param.to_sym] = param.to_sym
+    end
+    return language_hash
   end
 end

@@ -25,6 +25,10 @@
 // Jasny file upload
 //= require admin/plugins/jasny/jasny-bootstrap.min
 
+// Select 2 plugin
+//= require admin/plugins/select2/select2.full.min
+
+
 // Jquery UI
 //= require jquery_ujs
 //= require_tree ../../../vendor/assets/javascripts/admin/plugins/jquery-ui/.
@@ -41,3 +45,4 @@
 // REMOVED turbolinks
 //= require bootsy
 // REMOVE require tree .
+//= require admin/settings/general_settings
