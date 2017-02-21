@@ -1,4 +1,5 @@
 class Admin::PostCategoriesController < AdminController
+	include CrudConcern
 	
 	before_action :find_post_category, only: [:edit, :update, :destroy]
 
@@ -12,33 +13,18 @@ class Admin::PostCategoriesController < AdminController
 
 	def create
 		@post_category = PostCategory.new(post_category_params)
-
-		if @post_category.save
-			redirect_to edit_admin_post_category_path(@post_category)
-		else
-			render 'new'
-		end
+		create_helper(@post_category, "edit_admin_post_category_path")
 	end
 
 	def update
-		if @post_category.update(post_category_params)
-			redirect_to edit_admin_post_category_path(@post_category)
-		else
-			render 'edit'
-		end
+		update_helper(@post_category, "edit_admin_post_category_path", post_category_params)
 	end
 
 	def edit
 	end
 
 	def destroy
-		if @post_category.destroy
-			redirect_to admin_post_categories_path, method: :get
-			flash[:success] = "Удалено успешно"
-		else
-			render 'index'
-			flash[:alert] = "Что-то пошло не так"
-		end
+		destroy_helper(@post_category, "admin_post_categories_path")
 	end
 
 	private

@@ -1,4 +1,5 @@
 class Admin::UsersController < AdminController
+	include CrudConcern
 
 	before_action :find_user, only: [:edit, :update]
 
@@ -15,32 +16,15 @@ class Admin::UsersController < AdminController
 
 	def create
 		@user = User.new(user_params)
-
-		if @user.save
-			respond_to do |format|
-				format.html { 
-					redirect_to edit_admin_user_path(@user) 
-					flash[:success] = "Удалено успешно"
-				}
-			end
-		else
-			render :new
-			flash[:alert] = "Что-то пошло не так"
-		end
+		create_helper(@user, "edit_admin_user_path")
 	end
 
 	def update
-		if @user.update(user_params)
-			respond_to do |format|
-				format.html {
-					redirect_to edit_admin_user_path(@user)
-					flash[:success] = "Обновлено успешно"
-				}
-			end
-		else
-			render :edit
-			flash[:alert] = "Что-то пошло не так"
-		end
+		update_helper(@user, "edit_admin_user_path", user_params)
+	end
+
+	def destroy
+		destroy_helper(@user, "admin_users_path")
 	end
 
 	private

@@ -1,4 +1,5 @@
 class Admin::PostsController < AdminController
+	include CrudConcern
 	
 	before_action :find_post, only: [:edit, :update, :destroy]
 
@@ -12,35 +13,18 @@ class Admin::PostsController < AdminController
 
 	def create
 		@post = Post.new(post_params)
-
-		if @post.save
-			respond_to do |format|
-				format.html { redirect_to edit_admin_post_path(@post) }
-			end
-		else
-			render :new
-		end
+		create_helper(@post, "edit_admin_post_path")
 	end
 
 	def update
-		if @post.update(post_params)
-			redirect_to edit_admin_post_path(@post)
-		else
-			render :edit
-		end
+		update_helper(@post, "edit_admin_post_path", post_params)
 	end
 
 	def edit
 	end
 
 	def destroy
-		if @post.destroy
-			redirect_to admin_posts_path, method: :get
-			flash[:success] = "Удалено успешно"
-		else
-			render 'index'
-			flash[:alert] = "Что-то пошло не так"
-		end
+		destroy_helper(@post, "admin_posts_path")
 	end
 
 	private

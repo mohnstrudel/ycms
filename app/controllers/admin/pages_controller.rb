@@ -1,4 +1,5 @@
 class Admin::PagesController < AdminController
+	include CrudConcern
 	
 	before_action :find_page, only: [:edit, :update, :destroy]
 
@@ -12,33 +13,18 @@ class Admin::PagesController < AdminController
 
 	def create
 		@page = Page.new(page_params)
-
-		if @page.save
-			redirect_to edit_admin_page_path(@page)
-		else
-			render 'new'
-		end
+		create_helper(@page, "edit_admin_page_path")
 	end
 
 	def update
-		if @page.update(page_params)
-			redirect_to edit_admin_page_path(@page)
-		else
-			render 'edit'
-		end
+		update_helper(@page, "edit_admin_page_path", page_params)
 	end
 
 	def edit
 	end
 
 	def destroy
-		if @page.destroy
-			redirect_to admin_pages_path, method: :get
-			flash[:success] = "Удалено успешно"
-		else
-			render 'index'
-			flash[:alert] = "Что-то пошло не так"
-		end
+		destroy_helper(@page, "admin_pages_path")
 	end
 
 	private

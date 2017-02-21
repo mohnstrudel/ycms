@@ -13,33 +13,18 @@ class Admin::PageCategoriesController < AdminController
 
 	def create
 		@page_category = PageCategory.new(page_category_params)
-
-		if @page_category.save
-			redirect_to edit_admin_page_category_path(@page_category)
-		else
-			render 'new'
-		end
+		create_helper(@page_category, "edit_admin_page_category_path")
 	end
 
 	def update
-		if @page_category.update(page_category_params)
-			redirect_to edit_admin_page_category_path(@page_category)
-		else
-			render 'edit'
-		end
+		update_helper(@page_category, "edit_admin_page_category_path", page_category_params)
 	end
 
 	def edit
 	end
 
 	def destroy
-		if @page_category.destroy
-			redirect_to admin_page_categorys_path, method: :get
-			flash[:success] = "Удалено успешно"
-		else
-			render 'index'
-			flash[:alert] = "Что-то пошло не так"
-		end
+		destroy_helper(@page_category, "admin_page_categories_path")
 	end
 
 	private

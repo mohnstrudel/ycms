@@ -26,6 +26,8 @@
             %thead
               %tr
                 %th
+                -if object.has_attribute? :url
+                  %th URL
                 -if object.has_attribute? :title
                   %th Title
                 -if object.has_attribute? :first_name
@@ -43,6 +45,9 @@
                 %tr
                   %td
                     %input.i-checks{:checked => "checked", :name => "input[]", :type => "checkbox"}/
+                  -if obj.respond_to?(:url)
+                    %td
+                      =obj.url
                   -if obj.respond_to?(:title)
                     %td
                       =obj.title

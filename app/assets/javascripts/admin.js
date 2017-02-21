@@ -22,6 +22,9 @@
 //= require admin/inspinia
 //= require_tree ../../../vendor/assets/javascripts/admin/plugins/pace/.
 
+// Jasny file upload
+//= require admin/plugins/jasny/jasny-bootstrap.min
+
 // Jquery UI
 //= require jquery_ujs
 //= require_tree ../../../vendor/assets/javascripts/admin/plugins/jquery-ui/.
