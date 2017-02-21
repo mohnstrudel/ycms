@@ -46,13 +46,20 @@
                   -if obj.respond_to?(:title)
                     %td
                       =obj.title
-                  %td
-                    -if obj.respond_to?(:body)
+                  -if obj.respond_to?(:first_name)
+                    %td
+                      =obj.first_name
+                  -if obj.respond_to?(:body)
+                    %td
                       %small
                         =obj.body
-                  %td
-                    -if obj.respond_to?(:slug)
+                  -if obj.respond_to?(:slug)
+                    %td
                       =url_for_page(obj)
+                  -if obj.respond_to?(:email)
+                    %td
+                      =obj.email
+
                   %td
                     =time_ago_in_words(obj.created_at)
                     ago

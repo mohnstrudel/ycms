@@ -58,4 +58,25 @@ RSpec.describe Admin::UsersController, type: :controller do
       end
     end
   end
+
+  context "PUT methods" do
+
+    let(:existing_user) { FactoryGirl.create(:user, email: "non_updated_user@mail.com", first_name: "Tommy")}
+    let(:attributes) do
+      { email: "updated_user@mail.com", 
+        first_name: "UpdatedTommy" }
+    end
+
+    describe "#update" do
+
+      before(:each) do
+        put :update, id: existing_user.id, user: attributes
+        existing_user.reload
+      end
+
+      it { expect(response).to redirect_to(edit_admin_user_path(existing_user.id)) }
+      it { expect(existing_user.email).to eql attributes[:email]}
+    end
+
+  end
 end

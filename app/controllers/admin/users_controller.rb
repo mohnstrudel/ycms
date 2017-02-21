@@ -1,6 +1,6 @@
 class Admin::UsersController < AdminController
 
-	before_action :find_user, only: [:edit]
+	before_action :find_user, only: [:edit, :update]
 
 	def index
 		@users = User.all
@@ -25,6 +25,20 @@ class Admin::UsersController < AdminController
 			end
 		else
 			render :new
+			flash[:alert] = "Что-то пошло не так"
+		end
+	end
+
+	def update
+		if @user.update(user_params)
+			respond_to do |format|
+				format.html {
+					redirect_to edit_admin_user_path(@user)
+					flash[:success] = "Обновлено успешно"
+				}
+			end
+		else
+			render :edit
 			flash[:alert] = "Что-то пошло не так"
 		end
 	end

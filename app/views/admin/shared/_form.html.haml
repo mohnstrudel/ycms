@@ -68,6 +68,7 @@
                 =f.select :post_category_id, PostCategory.all.map { |post_category| [ post_category.title, post_category.id ] }, {}, { class: "form-control m-b" }
             .hr-line-dashed
 
+          / User part begin
           -if object.respond_to?(:first_name)
             .form-group
               %label.col-lg-2.control-label First Name
@@ -95,6 +96,7 @@
               .col-lg-10
                 =f.password_field :password, class: "form-control"
             .hr-line-dashed
+          / User part end
 
 
           .hr-line-dashed
