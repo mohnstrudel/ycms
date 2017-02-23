@@ -7,4 +7,7 @@ class Post < ApplicationRecord
 
   extend FriendlyId
   friendly_id :title, use: [:finders, :slugged]
+
+  translates :title, :body
+  globalize_accessors :locales => [:en, :ru], :attributes => [:title, :body]
 end

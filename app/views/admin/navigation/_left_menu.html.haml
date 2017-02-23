@@ -17,44 +17,49 @@
           IN+
       =nav_link admin_path do
         %i.fa.fa-area-chart
-        %span.nav-label Дашборд
+        %span.nav-label
+          =t('admin.navigation.dashboard')
       =nav_link "" do
         %i.fa.fa-newspaper-o
-        %span.nav-label Новости
+        %span.nav-label
+          =t('admin.navigation.posts.main')
         %span.fa.arrow
         %ul.nav.nav-second-level.collapse
           %li.active
-            =link_to 'Все новости', admin_posts_path
+            =link_to t('admin.navigation.posts.all_posts'), admin_posts_path
           %li
-            =link_to 'Создать новую', new_admin_post_path
+            =link_to t('admin.navigation.posts.new_post'), new_admin_post_path
           %li
-            =link_to 'Категории новостей', admin_post_categories_path
+            =link_to t('admin.navigation.posts.post_categories'), admin_post_categories_path
       =nav_link "" do
         %i.fa.fa-file-text
-        %span.nav-label Страницы
+        %span.nav-label
+          =t('admin.navigation.pages.main')
         %span.fa.arrow
         %ul.nav.nav-second-level.collapse
           %li.active
-            =link_to 'Все страницы', admin_pages_path
+            =link_to t('admin.navigation.pages.all_pages'), admin_pages_path
           %li
-            =link_to 'Создать новую', new_admin_page_path
+            =link_to t('admin.navigation.pages.new_page'), new_admin_page_path
           %li
-            =link_to 'Категории страниц', admin_page_categories_path
+            =link_to t('admin.navigation.pages.page_categories'), admin_page_categories_path
       =nav_link "" do
         %i.fa.fa-users
-        %span.nav-label Пользователи
+        %span.nav-label
+          =t('admin.navigation.users.main')
         %span.fa.arrow
         %ul.nav.nav-second-level.collapse
           %li.active
-            =link_to 'Все пользователи', admin_users_path
+            =link_to t('admin.navigation.users.all_users'), admin_users_path
           %li
-            =link_to 'Создать нового', new_admin_user_path
+            =link_to t('admin.navigation.users.new_user'), new_admin_user_path
 
       =nav_link admin_settings_path do
         %i.fa.fa-cog
-        %span.nav-label Настройки
+        %span.nav-label
+          =t('admin.navigation.settings.main')
         %span.fa.arrow
         %ul.nav.nav-second-level.collapse
           %li.active
             =nav_link admin_settings_general_settings_path do
-              Общие
+              =t('admin.navigation.settings.general')

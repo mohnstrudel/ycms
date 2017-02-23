@@ -1,6 +1,7 @@
 class Admin::PostsController < AdminController
 	include CrudConcern
-	
+	include Language
+
 	before_action :find_post, only: [:edit, :update, :destroy]
 
 	def index
@@ -21,6 +22,7 @@ class Admin::PostsController < AdminController
 	end
 
 	def edit
+		@remaining_locales = Language.get_remaining_locales
 	end
 
 	def destroy
@@ -34,7 +36,7 @@ class Admin::PostsController < AdminController
 	end
 
 	def post_params
-		params.require(:post).permit(:title, :body, :post_category_id, :slug)
+		params.require(:post).permit(:title, :body, :post_category_id, :slug, *Post.globalize_attribute_names)
 	end
 
 end

@@ -24,5 +24,8 @@ module Ycms
 	end
 
 	config.languages = { en: "English", ru: "Русский" }
+
+	# Include files from lib path
+    config.autoload_paths += %W(#{config.root}/lib)
   end
 end

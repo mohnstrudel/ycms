@@ -24,4 +24,8 @@ module AdminHelper
     end
   end
 
+  def custom_field(field, options = {})
+    return send("text_field", field, options)
+  end
+
 end

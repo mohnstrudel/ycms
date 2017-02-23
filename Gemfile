@@ -35,6 +35,13 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# For translated fields
+gem 'globalize', github: 'globalize/globalize'
+gem 'activemodel-serializers-xml'
+gem 'globalize-accessors'
+# For translated fields, let's use simple form 
+gem 'simple_form'
+
 # Use Devise for handling users
 gem 'devise'
 

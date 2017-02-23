@@ -2,7 +2,7 @@ module CrudConcern
   extend ActiveSupport::Concern
 
   included do
-    helper_method :method3
+    helper_method :create_helper, :update_helper, :destroy_helper
   end
 
   def create_helper(object, path)

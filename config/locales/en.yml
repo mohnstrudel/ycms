@@ -21,3 +21,26 @@
 
 en:
   hello: "Hello world"
+  admin:
+    form:
+      tab_main: "General"
+      tab_translation: "Other languages"
+    navigation:
+      dashboard: "Dashboard"
+      posts:
+        main: "Posts"
+        all_posts: "All posts"
+        new_post: "Create new post"
+        post_categories: "Post categories"
+      pages:
+        main: "Pages"
+        all_pages: "All pages"
+        new_page: "Create new page"
+        page_categories: "Page categories"
+      users:
+        main: "Users"
+        all_users: "All users"
+        new_user: "Create new user"
+      settings:
+        main: "Settings"
+        general: "General settings"

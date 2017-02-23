@@ -1,0 +1,5 @@
+ru:
+  admin:
+    form:
+      tab_main: "Основное"
+      tab_translation: "Другие языки"
