@@ -2,6 +2,7 @@ class Admin::PagesController < AdminController
 	include CrudConcern
 	
 	before_action :find_page, only: [:edit, :update, :destroy]
+	before_action :get_locales, only: [:edit, :create, :new]
 
 	def index
 		@pages = Page.all

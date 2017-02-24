@@ -2,7 +2,11 @@ module CrudConcern
   extend ActiveSupport::Concern
 
   included do
-    helper_method :create_helper, :update_helper, :destroy_helper
+    helper_method :create_helper, :update_helper, :destroy_helper, :get_locales
+  end
+
+  def get_locales
+    @remaining_locales = Language.get_remaining_locales
   end
 
   def create_helper(object, path)
@@ -17,6 +21,7 @@ module CrudConcern
       render :new
       flash[:danger] = "Something not quite right"
     end
+    @remaining_locales = Language.get_remaining_locales
   end
 
   def update_helper(object, path, params)

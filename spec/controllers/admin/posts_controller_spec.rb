@@ -7,6 +7,10 @@ RSpec.describe Admin::PostsController, type: :controller do
 	let (:valid_post) { FactoryGirl.build(:post) }
 	let (:invalid_post) { FactoryGirl.build(:post, title: nil) }
 
+	before(:each) do
+		GeneralSetting.create(url: "something.com", language: { "ru" => "ru" } )
+	end
+	
 	it "has a valid factory" do
 		expect(valid_post).to be_valid
 	end

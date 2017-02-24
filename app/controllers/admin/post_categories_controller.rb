@@ -2,6 +2,7 @@ class Admin::PostCategoriesController < AdminController
 	include CrudConcern
 	
 	before_action :find_post_category, only: [:edit, :update, :destroy]
+	before_action :get_locales, only: [:edit, :create, :new]
 
 	def index
 		@post_categories = PostCategory.all

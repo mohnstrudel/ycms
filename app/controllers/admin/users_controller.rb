@@ -2,6 +2,7 @@ class Admin::UsersController < AdminController
 	include CrudConcern
 
 	before_action :find_user, only: [:edit, :update]
+	before_action :get_locales, only: [:edit, :create, :new]
 
 	def index
 		@users = User.all

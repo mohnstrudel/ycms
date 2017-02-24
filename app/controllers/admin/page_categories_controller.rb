@@ -1,6 +1,7 @@
 class Admin::PageCategoriesController < AdminController
 	
 	before_action :find_page_category, only: [:edit, :update, :destroy]
+	before_action :get_locales, only: [:edit, :create, :new]
 
 	def index
 		@page_categories = PageCategory.all

@@ -3,6 +3,7 @@ class Admin::PostsController < AdminController
 	include Language
 
 	before_action :find_post, only: [:edit, :update, :destroy]
+	before_action :get_locales, only: [:edit, :create, :new]
 
 	def index
 		@posts = Post.all
@@ -22,7 +23,6 @@ class Admin::PostsController < AdminController
 	end
 
 	def edit
-		@remaining_locales = Language.get_remaining_locales
 	end
 
 	def destroy

@@ -4,6 +4,10 @@ RSpec.describe Admin::UsersController, type: :controller do
 
   render_views
 
+  before(:each) do
+    GeneralSetting.create(url: "something.com", language: { "ru" => "ru" } )
+  end
+
   context "GET methods" do
     let(:user) { FactoryGirl.build(:user) } 
     let(:created_user) { FactoryGirl.create(:user) }
