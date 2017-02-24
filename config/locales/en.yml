@@ -44,3 +44,9 @@ en:
       settings:
         main: "Settings"
         general: "General settings"
+      right_sidebar:
+        language:
+          title: "Select language"
+          description: "Please select language"
+          english: "English"
+          russian: "Russian"

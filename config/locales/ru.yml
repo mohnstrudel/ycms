@@ -1,5 +1,31 @@
 ru:
+  hello: "Привет, мир"
   admin:
     form:
       tab_main: "Основное"
       tab_translation: "Другие языки"
+    navigation:
+      dashboard: "Дашборд"
+      posts:
+        main: "Новости"
+        all_posts: "Все новости"
+        new_post: "Создать новость"
+        post_categories: "Категории новостей"
+      pages:
+        main: "Страницы"
+        all_pages: "Все страницы"
+        new_page: "Создать страницу"
+        page_categories: "Категории страниц"
+      users:
+        main: "Пользователи"
+        all_users: "Все пользователи"
+        new_user: "Создать пользователя"
+      settings:
+        main: "Настройки"
+        general: "Общие настройки"
+      right_sidebar:
+        language:
+          title: "Выбрать язык"
+          description: "Пожалуйста, выберите язык"
+          english: "Английский"
+          russian: "Русский"

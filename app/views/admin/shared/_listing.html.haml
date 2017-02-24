@@ -39,12 +39,12 @@
                 -if object.has_attribute? :email
                   %th Email
                 %th Created
-                %th Action
+                %th.text-right Action
             %tbody
               -object.each do |obj|
                 %tr
                   %td
-                    %input.i-checks{:checked => "checked", :name => "input[]", :type => "checkbox"}/
+                    %input.i-checks{:name => "input[]", :type => "checkbox"}/
                   -if obj.respond_to?(:url)
                     %td
                       =obj.url
@@ -68,13 +68,7 @@
                   %td
                     =time_ago_in_words(obj.created_at)
                     ago
-                  %td
+                  %td.text-right
                     .btn-group
-                      %button.btn.btn-primary.btn-xs.dropdown-toggle{"data-toggle" => "dropdown"}
-                        Action
-                        %span.caret
-                      %ul.dropdown-menu
-                        %li
-                          =link_to "Edit", send("edit_admin_#{local_assigns[:namespace]}#{object_name(object)}_path", obj)
-                        %li
-                          =link_to "Delete", send("admin_#{local_assigns[:namespace]}#{object_name(object)}_path", obj), method: :delete, data: {confirm: 'Действительно удалить?'}
+                      =link_to "Edit", send("edit_admin_#{local_assigns[:namespace]}#{object_name(object)}_path", obj), class: "btn-white btn btn-xs"
+                      =link_to "Delete", send("admin_#{local_assigns[:namespace]}#{object_name(object)}_path", obj), method: :delete, data: {confirm: 'Действительно удалить?'}, class: "btn-white btn btn-xs"
