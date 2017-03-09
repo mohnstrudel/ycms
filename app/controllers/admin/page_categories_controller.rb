@@ -1,4 +1,5 @@
 class Admin::PageCategoriesController < AdminController
+	include CrudConcern
 	
 	before_action :find_page_category, only: [:edit, :update, :destroy]
 	before_action :get_locales, only: [:edit, :create, :new]
