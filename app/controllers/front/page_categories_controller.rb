@@ -9,4 +9,14 @@ class Front::PageCategoriesController < FrontController
 			}
 		end
 	end
+
+	def show
+		@pages = PageCategory.includes(:pages).find(params[:id]).pages
+		respond_to do |format|
+			format.html
+			format.json {
+				render json: @pages, status: 200
+			}
+		end
+	end
 end

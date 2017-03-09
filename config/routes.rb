@@ -36,10 +36,10 @@ Rails.application.routes.draw do
 
   scope module: :front do
     root "static_pages#root"
-    get 'categories', to: 'page_categories#index'
+    # get 'categories', to: 'page_categories#index'
     # resources :pages, only: [:index, :show]
-    resources :page_categories, only: [:show], path: '' do
-      resources :pages, path: ''
+    resources :page_categories, only: [:index, :show] do
+      resources :pages
     	# Page.where.not(slug: nil).all.each do |page|
     	# 	get "/#{page.slug}", controller: "pages", action: "show", id: page.id
     	# end

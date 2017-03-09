@@ -12,7 +12,7 @@ User.create(first_name: "Super", second_name: "Admin", superadmin: true, email: 
 
 puts "Creating Page Categories"
 5.times do
-	PageCategory.create(title: Faker::Lorem.sentence(3), slug: Faker::Lorem.sentence(3).split(" ").join("-"))
+	PageCategory.create(title: Faker::Lorem.sentence(3), slug: Faker::Lorem.words(3).join("-"))
 end 
 puts "Ending creating page cats."
 
@@ -21,7 +21,7 @@ puts "Starting creating pages"
 	Page.create(
 		title: Faker::Lorem.sentence(3), 
 		body: Faker::Lorem.paragraph(rand(100)),
-		slug: Faker::Lorem.sentence(3).split(" ").join("-"),
+		slug: Faker::Lorem.words(3).join("-"),
 		page_category_id: rand(5)+1 )
 end
 puts "Ending creating pages"
