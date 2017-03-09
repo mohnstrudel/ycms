@@ -1,6 +1,5 @@
 class Admin::PostsController < AdminController
 	include CrudConcern
-	include Language
 
 	before_action :find_post, only: [:edit, :update, :destroy]
 	before_action :get_locales, only: [:edit, :create, :new]

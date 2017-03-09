@@ -1,5 +1,6 @@
 module CrudConcern 
   extend ActiveSupport::Concern
+  include Language
 
   included do
     helper_method :create_helper, :update_helper, :destroy_helper, :get_locales
