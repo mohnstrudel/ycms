@@ -9,3 +9,19 @@
 # Create superadmin user
 
 User.create(first_name: "Super", second_name: "Admin", superadmin: true, email: "admin@example.com", password: "superadmin")
+
+puts "Creating Page Categories"
+5.times do
+	PageCategory.create(title: Faker::Lorem.sentence(3), slug: Faker::Lorem.sentence(3).split(" ").join("-"))
+end 
+puts "Ending creating page cats."
+
+puts "Starting creating pages"
+100.times do
+	Page.create(
+		title: Faker::Lorem.sentence(3), 
+		body: Faker::Lorem.paragraph(rand(100)),
+		slug: Faker::Lorem.sentence(3).split(" ").join("-"),
+		page_category_id: rand(5)+1 )
+end
+puts "Ending creating pages"
