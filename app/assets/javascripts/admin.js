@@ -1,4 +1,4 @@
-//= require jquery2
+//= require jquery3
 //= require admin/bootstrap.min
 //= require_tree ../../../vendor/assets/javascripts/admin/plugins/metisMenu/.
 //= require_tree ../../../vendor/assets/javascripts/admin/plugins/slimscroll/.
