@@ -55,6 +55,8 @@ gem 'bootstrap-glyphicons'
 # Use this gem for nice slugs in URLs
 gem 'friendly_id'
 
+gem 'faker'
+
 # Use CKEditor for html formatting
 gem 'bootsy' # Screw CKEditor, it's not working on production! 
 gem 'carrierwave' # Required for images upload using ckeditor and in general
@@ -72,7 +74,7 @@ group :development, :test do
   # To test render_template
   gem 'rails-controller-testing'
   gem 'factory_girl_rails'
-  gem 'faker'
+  
 end
 
 group :development do
