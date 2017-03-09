@@ -23,7 +23,7 @@
             %label.col-sm-2.control-label
               =lang
             .col-sm-10
-              =f.send(Language.get_fields(lang), lang, class: 'form-control')
+              =f.send(Language.get_fields(lang, object), lang, class: 'form-control')
 
               / =f.text_field :title, class: 'form-control'
           .hr-line-dashed

@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Admin::UsersController, type: :controller do
 
   render_views
+  login_superadmin
 
   before(:each) do
     GeneralSetting.create(url: "something.com", language: { "ru" => "ru" } )

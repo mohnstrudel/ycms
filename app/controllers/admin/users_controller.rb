@@ -1,8 +1,10 @@
 class Admin::UsersController < AdminController
 	include CrudConcern
 
-	before_action :find_user, only: [:edit, :update]
+	before_action :find_user, only: [:edit, :update, :destroy]
 	before_action :get_locales, only: [:edit, :create, :new]
+
+	 wrap_parameters :user, include: [:first_name, :second_name, :email, :password, :password_confirmation]
 
 	def index
 		@users = User.all

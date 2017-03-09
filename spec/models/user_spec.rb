@@ -22,15 +22,15 @@ describe User do
 		expect(user).not_to be_valid
 	end
 
-	it "should not save as admin" do
+	it "should save as superadmin" do
 		expect { 
-  			User.create(email: "admin@example.com", admin: true, password: "mypassword")
-		}.not_to change { User.count }
+  			User.create(email: "admin@example.com", superadmin: true, password: "mypassword")
+		}.to change { User.count }
 	end
 
 	it "should be saved as regular user with filled in data" do
 		expect {
-			User.create(email: "regular@user.com", admin: false, password: "supersecret")
+			User.create(email: "regular@user.com", superadmin: false, password: "supersecret")
 			}.to change { User.count }
 	end
 end

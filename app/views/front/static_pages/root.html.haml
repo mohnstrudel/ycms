@@ -2,3 +2,5 @@
 
 -@page_categories.each do |pagecat|
 	=link_to pagecat.title, pagecat
+
+=link_to "Sign out", destroy_user_session_path, method: :delete

@@ -8,9 +8,9 @@
           %input#top-search.form-control{:name => "top-search", :placeholder => "Search for something...", :type => "text"}/
     %ul.nav.navbar-top-links.navbar-right
       %li
-        %a{:href => "#"}
+        =link_to destroy_user_session_path, method: :delete do
           %i.fa.fa-sign-out
-          Log out
+          =t('admin.logout')
       %li
         %a.right-sidebar-toggle
           %i.fa.fa-tasks

@@ -20,12 +20,14 @@ module Language
     end
   end
 
-  def self.get_fields(lang)
+  def self.get_fields(lang, object)
     field_name = lang.to_s.split("_")
     field_name.pop #remove last element
     field_name = field_name.join("_") # join again with _ sign
-    
-    field_type = Post::Translation.columns_hash[field_name].type
+    # To receive something like Post::Translation or User::Translation from object
+    # we need to perform this crazy operation
+    # object.class.model_name.name.constantize
+    field_type = object.class.model_name.name.constantize::Translation.columns_hash[field_name].type
     case field_type
     when :integer
       return "number_field"

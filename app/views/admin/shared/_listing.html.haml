@@ -29,17 +29,24 @@
                 -if object.has_attribute? :url
                   %th URL
                 -if object.has_attribute? :title
-                  %th Title
+                  %th
+                    =t('admin.form.model.title')
                 -if object.has_attribute? :first_name
-                  %th First Name
+                  %th
+                    =t('admin.form.model.first_name')
                 -if object.has_attribute? :body
-                  %th Body
+                  %th
+                    =t('admin.form.model.body')
                 -if object.has_attribute? :slug
-                  %th Slug
+                  %th
+                    =t('admin.form.model.slug')
                 -if object.has_attribute? :email
-                  %th Email
-                %th Created
-                %th.text-right Action
+                  %th
+                    =t('admin.form.model.email')
+                %th
+                  =t('admin.form.model.created')
+                %th.text-right
+                  =t('admin.form.actions.main')
             %tbody
               -object.each do |obj|
                 %tr
@@ -67,8 +74,8 @@
 
                   %td
                     =time_ago_in_words(obj.created_at)
-                    ago
+                    =t('admin.form.created_ago')
                   %td.text-right
                     .btn-group
-                      =link_to "Edit", send("edit_admin_#{local_assigns[:namespace]}#{object_name(object)}_path", obj), class: "btn-white btn btn-xs"
-                      =link_to "Delete", send("admin_#{local_assigns[:namespace]}#{object_name(object)}_path", obj), method: :delete, data: {confirm: 'Действительно удалить?'}, class: "btn-white btn btn-xs"
+                      =link_to t('admin.form.actions.edit'), send("edit_admin_#{local_assigns[:namespace]}#{object_name(object)}_path", obj), class: "btn-white btn btn-xs"
+                      =link_to t('admin.form.actions.delete'), send("admin_#{local_assigns[:namespace]}#{object_name(object)}_path", obj), method: :delete, data: {confirm: t('admin.form.confirm') }, class: "btn-white btn btn-xs"

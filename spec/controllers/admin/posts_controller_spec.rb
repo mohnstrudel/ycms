@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Admin::PostsController, type: :controller do
 
 	render_views
+	login_superadmin
 
 	let (:valid_post) { FactoryGirl.build(:post) }
 	let (:invalid_post) { FactoryGirl.build(:post, title: nil) }

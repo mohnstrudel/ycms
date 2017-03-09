@@ -23,8 +23,30 @@ en:
   hello: "Hello world"
   admin:
     form:
-      tab_main: "General"
+      tab_main: 
+        title: "General"
+      model:
+        title: "Title"
+        body: "Text body"
+        description: "Description"
+        slug: "Slug"
+        category: "Category"
+        first_name: "First name"
+        second_name: "Last name"
+        email: "Email"
+        created: "Created"
       tab_translation: "Other languages"
+      actions:
+        main: "Actions"
+        save: "Save"
+        back: "Back"
+        edit: "Edit"
+        delete: "Delete"
+      confirm: "Are you sure?"
+      created_ago: "ago"
+    logout: "Log out"
+    profile: "Edit profile"
+
     navigation:
       dashboard: "Dashboard"
       posts:
@@ -50,3 +72,8 @@ en:
           description: "Please select language"
           english: "English"
           russian: "Russian"
+  
+  controllers:
+    admin:
+      post:
+        new: "New"

@@ -4,14 +4,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validate :admin_not_allowed
+  # validate :superadmin_not_allowed
   validates :password, length: { minimum: 8 }, on: :create
+  validates :password, presence: true, on: :create
 
   private
 
-  def admin_not_allowed
-    if (admin == true)
-      errors.add(:admin, "Setting of admin not allowed!")
-    end
-  end
+  # def superadmin_not_allowed
+  #   if (superadmin == true)
+  #     errors.add(:superadmin, "Setting of superadmin not allowed!")
+  #   end
+  # end
 end
